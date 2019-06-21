@@ -21,7 +21,7 @@ class Login extends React.Component {
         });
       };
 
-    login = e => {
+    handleLogin = e => {
         e.preventDefault();
         this.props.login(this.state.credentials).then(res => {
           if (res) {
@@ -33,7 +33,7 @@ class Login extends React.Component {
 render() {
     return (
         <div>
-        <form onSubmit={this.login}>
+        <form onSubmit={this.handleLogin}>
             <input
             type="text"
             name="username"
@@ -60,7 +60,6 @@ render() {
 }
 
 const mapStateToProps = state => ({
-    error: state.error,
     loggingIn: state.loggingIn
   });
   
